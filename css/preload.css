@@ -1,0 +1,196 @@
+.index {
+	
+}
+.branding-preload {
+		
+		background: url(../img/branding-white.png) no-repeat 0 0;
+		height: 60px;
+		width: 180px;
+		z-index: 22000;
+		margin: 0 auto;
+		margin-top: 15%;
+		display:none;
+}
+
+.pe-header {
+	position: fixed;
+	top: 0;
+	z-index: 21000;
+	min-height: 460px;
+	width: 100%;
+	height: 100%;
+	background: #666;
+}
+
+.pe-header h1 {
+	margin: 0;
+}
+
+.pe-logo,
+.pe-loader {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	opacity: 0;
+	cursor: default;
+	pointer-events: none;
+}
+
+.pe-logo {
+	top: 0;
+	height: 100%;
+	-webkit-transform: translate3d(0,25%,0);
+	transform: translate3d(0,25%,0);
+}
+
+.pe-loader {
+	top: 40%;
+}
+
+.pe-header .pe-inner {
+	display: block;
+	margin: 0 auto;
+}
+
+.pe-header .pe-logo svg {
+	position: absolute;
+	min-height: 200px;
+	height: 25%;
+}
+
+.loaded .pe-header .pe-logo svg {
+	max-height: 300px;
+}
+
+.pe-header .pe-logo svg path {
+	fill: #24E636;
+}
+
+.pe-header .pe-loader svg path {
+	fill: none;
+	stroke-width: 1;
+}
+
+.pe-header .pe-loader svg path.pfe {
+	fill: #333;
+}
+
+.pe-header .pe-loader svg path.pe-loader-circlebg {
+	stroke: #333;
+}
+
+.pe-header .pe-loader svg path.pe-loader-circle {
+	-webkit-transition: stroke-dashoffset 0.2s;
+	transition: stroke-dashoffset 0.2s;
+	stroke: #24E636;
+}
+
+.pe-main {
+	overflow: hidden;
+}
+
+
+.loading .pe-logo,
+.loading .pe-loader {
+	opacity: 1;
+}
+
+.loading .pe-logo {
+	-webkit-animation: animInitialLogo 1s cubic-bezier(0.7,0,0.3,1) both;
+	animation: animInitialLogo 1s cubic-bezier(0.7,0,0.3,1) both;
+}
+
+@-webkit-keyframes animInitialLogo {
+	from { opacity: 0; }
+}
+
+@keyframes animInitialLogo {
+	from { opacity: 0; }
+}
+
+.loading .pe-loader {
+	-webkit-animation: animInitialLoader 1s cubic-bezier(0.7,0,0.3,1) both;
+	animation: animInitialLoader 1s cubic-bezier(0.7,0,0.3,1) both;
+}
+
+@-webkit-keyframes animInitialLoader {
+	from { opacity: 0; -webkit-transform: scale3d(0.5,0.5,1); }
+}
+
+@keyframes animInitialLoader {
+	from { opacity: 0; -webkit-transform: scale3d(0.5,0.5,1); transform: scale3d(0.5,0.5,1); }
+}
+
+
+.loaded .pe-logo,
+.loaded .pe-loader {
+	opacity: 1;
+}
+
+.loaded .pe-logo {
+	-webkit-transform-origin: 50% 0;
+	transform-origin: 50% 0;
+	-webkit-animation: animLoadedLogo 1s cubic-bezier(0.7,0,0.3,1) forwards;
+	animation: animLoadedLogo 1s cubic-bezier(0.7,0,0.3,1) forwards;
+}
+
+@-webkit-keyframes animLoadedLogo {
+	to { -webkit-transform: translate3d(0,100%,0) translate3d(0,50px,0) scale3d(0.65,0.65,1); }
+}
+
+@keyframes animLoadedLogo {
+	to { -webkit-transform: translate3d(0,100%,0) translate3d(0,50px,0) scale3d(0.65,0.65,1); transform: translate3d(0,100%,0) translate3d(0,50px,0) scale3d(0.65,0.65,1); }
+}
+
+.loaded .pe-loader {
+	-webkit-animation: animLoadedLoader 0.5s cubic-bezier(0.7,0,0.3,1) forwards;
+	animation: animLoadedLoader 0.5s cubic-bezier(0.7,0,0.3,1) forwards;
+}
+
+@-webkit-keyframes animLoadedLoader {
+	to { opacity: 0; -webkit-transform: translate3d(0,-100%,0) scale3d(0.3,0.3,1); }
+}
+
+@keyframes animLoadedLoader {
+	to { opacity: 0; -webkit-transform: translate3d(0,-100%,0) scale3d(0.3,0.3,1); transform: translate3d(0,-100%,0) scale3d(0.3,0.3,1); }
+}
+
+
+
+.loaded .pe-header {
+	-webkit-animation: animLoadedHeader 1s cubic-bezier(0.7,0,0.3,1) forwards;
+	animation: animLoadedHeader 1s cubic-bezier(0.7,0,0.3,1) forwards;
+}
+
+@-webkit-keyframes animLoadedHeader {
+	to { -webkit-transform: translate3d(0,-100%,0); }
+}
+
+@keyframes animLoadedHeader {
+	to { -webkit-transform: translate3d(0,-100%,0); transform: translate3d(0,-100%,0); }
+}
+
+
+
+.no-preload .pe-header {
+	position: absolute;
+}
+
+
+.no-js .pe-header {
+	position: relative;
+	min-height: 0px;
+}
+
+.no-js .pe-header .pe-logo {
+	margin-top: 20px;
+	height: 180px;
+	opacity: 1;
+	-webkit-transform: none;
+	transform: none;
+}
+
+.no-js .pe-header .pe-logo svg path {
+	fill: #fff;
+}
+
